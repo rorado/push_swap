@@ -6,9 +6,16 @@
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 07:50:24 by soahrich          #+#    #+#             */
-/*   Updated: 2026/01/03 08:21:43 by soahrich         ###   ########.fr       */
+/*   Updated: 2026/01/04 19:10:56 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int ft_isdigit(int c)
+{
+    if (c >= '0' && c <= '9')
+        return (1);
+    return (0);
+}
 
 int is_integer(char *str)
 {
