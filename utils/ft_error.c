@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 07:07:36 by soahrich          #+#    #+#             */
-/*   Updated: 2026/01/04 19:16:06 by soahrich         ###   ########.fr       */
+/*   Created: 2026/01/04 19:15:26 by soahrich          #+#    #+#             */
+/*   Updated: 2026/01/04 19:15:27 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "push_swap.h"
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
-
-char **ft_split(const char *s, char c);
-
-#endif
+int ft_error(void)
+{
+    write(2, "Error\n", 6);
+    return (1);
+}
