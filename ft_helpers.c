@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_helpers.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 07:07:36 by soahrich          #+#    #+#             */
-/*   Updated: 2026/01/06 01:04:35 by soahrich         ###   ########.fr       */
+/*   Created: 2026/01/06 00:36:50 by soahrich          #+#    #+#             */
+/*   Updated: 2026/01/06 01:03:40 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "push_swap.h"
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <unistd.h>
+int ft_isdigit(int c)
+{
+    if (c >= '0' && c <= '9')
+        return (1);
+    return (0);
+}
 
-char **ft_split(const char *s, char c);
-int ft_isdigit(int c);
-void ft_putstr(char *str);
-int ft_error(void);
-long ft_atol(char *str);
+void ft_putstr(char *str)
+{
+    int i;
 
-#endif
+    i = 0;
+
+    while (*str)
+        write(1, str++, 1);
+}
+
+int ft_error(void)
+{
+    write(2, "Error\n", 6);
+    return (0);
+}

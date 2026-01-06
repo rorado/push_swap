@@ -6,11 +6,12 @@
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 07:50:24 by soahrich          #+#    #+#             */
-/*   Updated: 2026/01/04 19:14:29 by soahrich         ###   ########.fr       */
+/*   Updated: 2026/01/06 01:37:20 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void free_split(char **split)
 {
     int i;
@@ -26,13 +27,6 @@ void free_split(char **split)
     free(split);
 }
 
-int ft_isdigit(int c)
-{
-    if (c >= '0' && c <= '9')
-        return (1);
-    return (0);
-}
-
 int is_integer(char *str)
 {
     int i = 0;
@@ -42,12 +36,13 @@ int is_integer(char *str)
         return 0;
     while (str[i])
     {
-        if (!isdigit(str[i]))
+        if (!ft_isdigit(str[i]))
             return 0;
         i++;
     }
     return 1;
 }
+
 int check_args(char **args)
 {
     int     i;

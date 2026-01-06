@@ -1,26 +1,23 @@
-
-SRC = push_swap.c 
-
+SRC     = push_swap.c ft_split.c ft_helpers.c ft_atoi.c
 OBJS    = $(SRC:.c=.o)
 
-NAME    = libftprintf.a
+NAME    = push_swap
 CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
-AR      = ar rcs
 RM      = rm -f
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(AR) $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.c ft_printf.h
+%.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
