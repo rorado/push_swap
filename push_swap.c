@@ -6,7 +6,7 @@
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 07:50:24 by soahrich          #+#    #+#             */
-/*   Updated: 2026/01/06 01:37:20 by soahrich         ###   ########.fr       */
+/*   Updated: 2026/01/07 15:43:24 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void free_split(char **split)
     free(split);
 }
 
-int is_integer(char *str)
+int is_num(char *str)
 {
     int i = 0;
     if (str[0] == '-' || str[0] == '+')
@@ -53,7 +53,7 @@ int check_args(char **args)
         return (0);
     while (args[i])
     {
-        if (!is_integer(args[i]))
+        if (!is_num(args[i]))
             return (0);
         n = ft_atol(args[i]);
         if (n < INT_MIN || n > INT_MAX)
