@@ -6,7 +6,7 @@
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 00:35:40 by soahrich          #+#    #+#             */
-/*   Updated: 2026/01/06 01:04:29 by soahrich         ###   ########.fr       */
+/*   Updated: 2026/01/08 19:54:48 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ long ft_atol(char *str)
 {
     int i;
     int sign;
-    int res;
+    long res;
 
     sign = 1;
     res = 0;
