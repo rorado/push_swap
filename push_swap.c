@@ -96,6 +96,41 @@ int **set_index(int *numbers)
 	
 }
 
+int set_index(int *numbers, int size)
+{
+	int	i;
+	int	j;
+	int	count;
+	int	*numbers_i;
+
+	numbers_i = malloc(sizeof(int) * size);
+	if (!numbers_i)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		count = 0;
+		j = 0;
+		while (j < size)
+		{
+			if (numbers[j] < numbers[i])
+				count++;
+			j++;
+		}
+		numbers_i[i] = count;
+		i++;
+	}
+	free(numbers);
+	i = 0;
+	while (i < size)
+	{
+		numbers[i] = numbers_i[i];
+		i++;
+	}
+	free(numbers_i);
+	return (0);
+}
+
 int	*store_numbers(int ac, char **av, int total)
 {
 	int		*numbers;
@@ -129,7 +164,7 @@ int	*store_numbers(int ac, char **av, int total)
 		free_split(args);
 		i++;
 	}
-	set_index(numbers);
+	set_index(numbers, total);
 	return (numbers);
 }
 
