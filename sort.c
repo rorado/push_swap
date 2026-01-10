@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 07:50:24 by soahrich          #+#    #+#             */
+/*   Created: 2026/01/10 00:00:00 by soahrich          #+#    #+#             */
 /*   Updated: 2026/01/10 00:00:00 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	push_swap(t_stack **a, t_stack **b)
 {
-	int		total;
-	int		*numbers;
-	t_stack	*a;
-	t_stack	*b;
+	int	size;
 
-	if (ac < 2)
-		return (0);
-	total = count_numbers(ac, av);
-	if (total <= 0)
-		return (ft_error());
-	numbers = store_numbers(ac, av, total);
-	if (!numbers)
-		return (ft_error());
-	if (has_duplicates(numbers, total))
-		return (free(numbers), ft_error());
-	a = init_stack(numbers, total);
-	b = NULL;
-	free(numbers);
-	if (!a)
-		return (ft_error());
-	push_swap(&a, &b);
-	free_stack(&a);
-	free_stack(&b);
-	return (0);
+	if (is_sorted(*a))
+		return ;
+	size = stack_size(*a);
+	if (size == 2)
+		sort_two(a);
+	else if (size == 3)
+		sort_three(a);
+	else if (size <= 5)
+		sort_four_five(a, b);
+	else
+		radix_sort(a, b, size);
 }

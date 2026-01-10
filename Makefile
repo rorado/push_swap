@@ -1,4 +1,6 @@
-SRC     = push_swap.c ft_split.c ft_helpers.c ft_atoi.c
+SRC     = push_swap.c ft_split.c ft_helpers.c ft_atoi.c parsing.c utils.c \
+          stack.c operations_swap.c operations_push.c operations_rotate.c \
+          operations_rev_rotate.c sort_small.c sort_big.c sort.c
 OBJS    = $(SRC:.c=.o)
 
 NAME    = push_swap

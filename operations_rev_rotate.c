@@ -1,41 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   operations_rev_rotate.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 07:50:24 by soahrich          #+#    #+#             */
+/*   Created: 2026/01/10 00:00:00 by soahrich          #+#    #+#             */
 /*   Updated: 2026/01/10 00:00:00 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+static void	rev_rotate(t_stack **stack)
 {
-	int		total;
-	int		*numbers;
-	t_stack	*a;
-	t_stack	*b;
+	t_stack	*prev;
+	t_stack	*last;
 
-	if (ac < 2)
-		return (0);
-	total = count_numbers(ac, av);
-	if (total <= 0)
-		return (ft_error());
-	numbers = store_numbers(ac, av, total);
-	if (!numbers)
-		return (ft_error());
-	if (has_duplicates(numbers, total))
-		return (free(numbers), ft_error());
-	a = init_stack(numbers, total);
-	b = NULL;
-	free(numbers);
-	if (!a)
-		return (ft_error());
-	push_swap(&a, &b);
-	free_stack(&a);
-	free_stack(&b);
-	return (0);
+	if (!*stack || !(*stack)->next)
+		return ;
+	prev = NULL;
+	last = *stack;
+	while (last->next)
+	{
+		prev = last;
+		last = last->next;
+	}
+	prev->next = NULL;
+	last->next = *stack;
+	*stack = last;
+}
+
+void	rra(t_stack **a, int print)
+{
+	rev_rotate(a);
+	if (print)
+		write(1, "rra\n", 4);
+}
+
+void	rrb(t_stack **b, int print)
+{
+	rev_rotate(b);
+	if (print)
+		write(1, "rrb\n", 4);
+}
+
+void	rrr(t_stack **a, t_stack **b, int print)
+{
+	rev_rotate(a);
+	rev_rotate(b);
+	if (print)
+		write(1, "rrr\n", 4);
 }

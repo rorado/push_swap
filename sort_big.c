@@ -1,41 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 07:50:24 by soahrich          #+#    #+#             */
+/*   Created: 2026/01/10 00:00:00 by soahrich          #+#    #+#             */
 /*   Updated: 2026/01/10 00:00:00 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+static int	get_max_bits(int size)
 {
-	int		total;
-	int		*numbers;
-	t_stack	*a;
-	t_stack	*b;
+	int	bits;
 
-	if (ac < 2)
-		return (0);
-	total = count_numbers(ac, av);
-	if (total <= 0)
-		return (ft_error());
-	numbers = store_numbers(ac, av, total);
-	if (!numbers)
-		return (ft_error());
-	if (has_duplicates(numbers, total))
-		return (free(numbers), ft_error());
-	a = init_stack(numbers, total);
-	b = NULL;
-	free(numbers);
-	if (!a)
-		return (ft_error());
-	push_swap(&a, &b);
-	free_stack(&a);
-	free_stack(&b);
-	return (0);
+	bits = 0;
+	while ((size - 1) >> bits)
+		bits++;
+	return (bits);
+}
+
+void	radix_sort(t_stack **a, t_stack **b, int size)
+{
+	int	i;
+	int	j;
+	int	max_bits;
+
+	max_bits = get_max_bits(size);
+	i = 0;
+	while (i < max_bits)
+	{
+		j = 0;
+		while (j < size)
+		{
+			if (((*a)->value >> i) & 1)
+				ra(a, 1);
+			else
+				pb(a, b, 1);
+			j++;
+		}
+		while (*b)
+			pa(a, b, 1);
+		i++;
+	}
 }
