@@ -6,7 +6,7 @@
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:25:53 by didara            #+#    #+#             */
-/*   Updated: 2026/01/26 10:24:11 by soahrich         ###   ########.fr       */
+/*   Updated: 2026/01/26 20:16:52 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,7 @@ char	*ft_strdup(char *s);
 char	**ft_split(char *s, char c);
 void	*free_buff(char *buffer, char *stash);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-   
-   
+
 int		ft_isdigit(char c);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strlen(char *s);

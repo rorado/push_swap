@@ -6,7 +6,7 @@
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:47:42 by didara            #+#    #+#             */
-/*   Updated: 2026/01/26 10:23:15 by soahrich         ###   ########.fr       */
+/*   Updated: 2026/01/26 20:17:23 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ t_stack	*get_stack_before_bottom(t_stack *stack);
 void	stack_add_bottom(t_stack **stack, t_stack *new);
 int		get_stack_size(t_stack *stack);
 void	free_stack(t_stack **stack);
-
 
 int		count_numbers(int ac, char **av);
 int		*store_numbers(int ac, char **av, int total);

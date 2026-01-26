@@ -6,7 +6,7 @@
 /*   By: soahrich <soahrich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:24:00 by didara            #+#    #+#             */
-/*   Updated: 2026/01/26 10:15:57 by soahrich         ###   ########.fr       */
+/*   Updated: 2026/01/26 20:17:02 by soahrich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,3 @@ int	main(int ac, char **av)
 	push_swap(&stack_a, &stack_b, stack_size);
 	return (free_stack(&stack_a), free_stack(&stack_b), free(numbers), 0);
 }
-
